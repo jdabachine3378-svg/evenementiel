@@ -107,13 +107,17 @@ ________________________________________
 Ce projet m’a permis de mettre en pratique mes compétences en Java Spring Boot, JPA/Hibernate, et Thymeleaf. Il représente une expérience enrichissante en développement full stack et en architecture logicielle. De plus, il constitue une base solide pour d’éventuelles améliorations futures .
 ________________________________________
 Figure – Interface principale de l’application Événementiel
-<img width="839" height="456" alt="image" src="https://github.com/user-attachments/assets/3bc05d7c-f248-41cc-8b6a-5a35ca65f172" />
+<img width="1885" height="937" alt="image" src="https://github.com/user-attachments/assets/59834b9f-e674-4e50-adb9-98e0bb72e4d4" />
+<img width="1835" height="841" alt="image" src="https://github.com/user-attachments/assets/85a63c17-98c1-4f7f-b561-96a0079953de" />
+
 
 Figure  – Formulaire d’ajout d’un nouveau ticket 
  <img width="1901" height="716" alt="image" src="https://github.com/user-attachments/assets/b027aa72-897e-49a8-b98c-84cf6f3cc0a1" />
  <img width="1805" height="921" alt="image" src="https://github.com/user-attachments/assets/e793c988-e831-4fcc-963e-dc20a8833e76" />
 Figure  – Tableau récapitulatif des participants 
-<img width="1866" height="915" alt="image" src="https://github.com/user-attachments/assets/197a5a33-b47b-4a0e-bc3b-f4689c60d1c8" />
+<img width="1897" height="919" alt="image" src="https://github.com/user-attachments/assets/d51ea4ba-6124-44cc-b0da-42f6fc78ee4a" />
+<img width="1846" height="822" alt="image" src="https://github.com/user-attachments/assets/0ed633fe-4cbe-4348-9efe-4582c530cfd3" />
+
 
 
  
