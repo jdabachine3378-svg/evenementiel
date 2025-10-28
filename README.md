@@ -117,6 +117,11 @@ Figure  – Formulaire d’ajout d’un nouveau ticket
 Figure  – Tableau récapitulatif des participants 
 <img width="1897" height="919" alt="image" src="https://github.com/user-attachments/assets/d51ea4ba-6124-44cc-b0da-42f6fc78ee4a" />
 <img width="1846" height="822" alt="image" src="https://github.com/user-attachments/assets/0ed633fe-4cbe-4348-9efe-4582c530cfd3" />
+<img width="1886" height="911" alt="image" src="https://github.com/user-attachments/assets/b4dc7730-ca42-4b58-9d99-759eb4a8b98c" />
+<img width="1867" height="940" alt="image" src="https://github.com/user-attachments/assets/96ddf7b4-e68d-4cf8-bd03-ef71e4fc6c22" />
+![Uploading image.png…]()
+
+
 
 
 
