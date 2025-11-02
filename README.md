@@ -1,128 +1,174 @@
-Rapport du Projet : Application de Gestion Événementielle
-11. Encodement :
-•	Nom de l’étudiant : DABACHINE Jamila
-•	Encadrant : Professeur  LACHGAR Mohamed
-•	Module : Technologies de Programmation Avancées,
-•	Année universitaire : 2025
- Introduction
-Dans le cadre du module de Technologies de Programmation Avancées, j’ai developer une application web intitulée « Gestion Événementielle ». Ce projet a été conçu dans le but de faciliter la gestion des événements, des participants et des tickets associés à chaque événement. L’application est développée avec Spring Boot, Thymeleaf, Bootstrap et MySQL, et permet de réaliser des opérations CRUD complètes sur toutes les entités.
-________________________________________
-1. Objectifs du projet
-L’objectif principal de ce projet est de mettre en place une application web professionnelle permettant à un utilisateur (organisateur) de: 
-- Créer et gérer des événements. 
-- Enregistrer et suivre les participants. 
-- Générer et gérer les tickets liés aux événements.
-Ce projet vise à proposer une solution simple, ergonomique et moderne pour toute structure souhaitant gérer efficacement ses activités événementielles.
-________________________________________
-2. Technologies utilisées
-Composant	Technologie
-Langage backend	Java 17 (JDK 17)
-Framework	Spring Boot 3.2.2
-ORM	Hibernate / JPA
-Base de données	MySQL 8
-Interface utilisateur	Thymeleaf + HTML + CSS + Bootstrap 5
-Gestion de projet	Maven 3.9
-IDE de développement	IntelliJ IDEA 2025.2
-________________________________________
-3. Architecture du projet
-Le projet suit une architecture en couches claire et bien organisée:
-src/
- ├─ main/java/com/example/evenementiel/
- │   ├─ model/          → Contient les entités JPA (Evenement, Participant, Ticket, TicketKey)
- │   ├─ repository/     → Contient les interfaces JpaRepository
- │   ├─ controller/
- │   │    ├─ api/       → Contrôleurs REST pour les appels API
- │   │    └─ web/       → Contrôleurs Web pour les pages Thymeleaf
- │   └─ EvenementielApplication.java → Classe principale
- ├─ main/resources/
- │   ├─ templates/      → Pages HTML (evenements.html, participants.html, tickets.html)
- │   ├─ static/css/     → Fichiers CSS (style.css)
- │   └─ application.properties
-________________________________________
-4. Conception du modèle de données
-Le modèle repose sur trois entités principales :
-◼ Evenement
-Champ	Type	Description
-id	Long	Identifiant unique de l’événement
-titre	String	Nom de l’événement
-ville	String	Lieu de l’événement
-date	LocalDate	Date de l’événement
-type	String	Type d’événement (concert, conférence…)
-◼ Participant
-Champ	Type	Description
-id	Long	Identifiant unique du participant
-nom	String	Nom du participant
-email	String	Adresse e-mail du participant
-◼ Ticket (avec Clé Composite)
-Champ	Type	Description
-id (TicketKey)	Composite	(evenementId + participantId)
-Prix	BigDecimal	Prix du ticket
-Statut	String	Statut (Confirmé, En attente, Annulé)
-dateAchat	LocalDate	Date d’achat du ticket
-Les relations entre les entités sont définies comme suit : - Ticket → Evenement : @ManyToOne - Ticket → Participant : @ManyToOne - Evenement → Ticket : @OneToMany - Participant → Ticket : @OneToMany
-4.3 Modèle relationnel (capture d’écran)
-Figure 4.1 : Schéma relationnel de la base Événementiel (phpMyAdmin)
-<img width="952" height="621" alt="image" src="https://github.com/user-attachments/assets/95a3d258-2833-457f-9c33-82feed88c1ae" />
-Le modèle relationnel suivant illustre la structure de la base de données du projet.
-Chaque événement peut avoir plusieurs tickets, et chaque participant peut posséder plusieurs tickets.
-Le ticket est donc au centre de la relation entre un événement et un participant.
-________________________________________
-5. Fonctionnalités principales
-•	Création, affichage, modification et suppression d’événements.
-•	Gestion des participants (inscription et suppression).
-•	Génération automatique de tickets lors de l’inscription.
-•	Visualisation de la liste des tickets avec leurs statuts.
-•	Filtrage des tickets par statut (Confirmé, Annulé, En attente).
-•	Statistiques basiques sur le nombre de tickets et d’événements.
-________________________________________
-6. Configuration de la base de données
-spring.datasource.url=jdbc:mysql://localhost:3306/evenementiel?serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-________________________________________
-7. Déploiement et exécution
-▶ Prérequis :
-•	JDK 17 ou plus
-•	MySQL 8
-•	Maven installé
-▶ Lancer le projet :
-mvn clean install
-mvn spring-boot:run
-▶ Accès via navigateur :
-•	Page d’accueil: http://localhost:8081/
-•	Tickets : http://localhost:8081/tickets
-•	Événements : http://localhost:8081/evenements
-•	Participants : http://localhost:8081/participants
-________________________________________
-8. Exemple de données initiales
-evenementRepository.save(new Evenement("Tech Conference", "Casablanca", LocalDate.now(), "Conférence"));
-participantRepository.save(new Participant("Ali", "ali@gmail.com"));
-________________________________________
-9. Résultats et observations
-L’application répond parfaitement aux besoins de gestion d’événements. Elle permet une navigation fluide, une interface claire et un design professionnel grâce à Bootstrap. Les tests unitaires effectués sur les contrôleurs REST montrent la stabilité et la fiabilité du système.
-________________________________________
-10. Conclusion
-Ce projet m’a permis de mettre en pratique mes compétences en Java Spring Boot, JPA/Hibernate, et Thymeleaf. Il représente une expérience enrichissante en développement full stack et en architecture logicielle. De plus, il constitue une base solide pour d’éventuelles améliorations futures .
-________________________________________
-Figure – Interface principale de l’application Événementiel
-<img width="1885" height="937" alt="image" src="https://github.com/user-attachments/assets/59834b9f-e674-4e50-adb9-98e0bb72e4d4" />
-<img width="1835" height="841" alt="image" src="https://github.com/user-attachments/assets/85a63c17-98c1-4f7f-b561-96a0079953de" />
+# 🎟️ Événementiel — Application Web de Gestion d’Événements, Participants et Tickets
 
+![Spring Boot](https://img.shields.io/badge/SpringBoot-3.2.2-brightgreen)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-HTML5-orange)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
+![Java](https://img.shields.io/badge/Java-17-red)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-Figure  – Formulaire d’ajout d’un nouveau ticket 
- <img width="1901" height="716" alt="image" src="https://github.com/user-attachments/assets/b027aa72-897e-49a8-b98c-84cf6f3cc0a1" />
- <img width="1805" height="921" alt="image" src="https://github.com/user-attachments/assets/e793c988-e831-4fcc-963e-dc20a8833e76" />
-Figure  – Tableau récapitulatif des participants 
-<img width="1897" height="919" alt="image" src="https://github.com/user-attachments/assets/d51ea4ba-6124-44cc-b0da-42f6fc78ee4a" />
-<img width="1846" height="822" alt="image" src="https://github.com/user-attachments/assets/0ed633fe-4cbe-4348-9efe-4582c530cfd3" />
-<img width="1886" height="911" alt="image" src="https://github.com/user-attachments/assets/b4dc7730-ca42-4b58-9d99-759eb4a8b98c" />
-<img width="1867" height="940" alt="image" src="https://github.com/user-attachments/assets/96ddf7b4-e68d-4cf8-bd03-ef71e4fc6c22" />
-![Uploading image.png…]()
+---
 
+## 🧭 Aperçu du projet
 
+**Événementiel** est une application web interactive permettant la **gestion complète des événements, des participants et des tickets**.  
+Développée en **Spring Boot (backend)** et **Thymeleaf (frontend)**, elle illustre une architecture **MVC** moderne avec intégration MySQL et interface responsive via **Bootstrap 5**.
 
+> 🎯 Objectif : Simplifier la gestion d’événements et offrir une interface claire et intuitive.
 
+---
 
+## ⚙️ Fonctionnalités principales
+
+- ✅ **CRUD complet** (Créer, Lire, Mettre à jour, Supprimer)
+  - Événements
+  - Participants
+  - Tickets (avec clé composite)
+- 📊 **Statistiques dynamiques**
+  - Événements par ville et par type
+  - Participants par domaine d’email
+  - Nombre de tickets par statut
+- 🎨 Interface ergonomique avec **Bootstrap 5**
+- 🔒 Validation des champs (`@NotNull`, `@Email`, `@Size`)
+- 💾 Base de données **MySQL 8.0**
+- 🧩 Architecture **Spring Boot / JPA / Thymeleaf**
+
+---
+
+## 🧱 Architecture technique
+
+### 🧩 Stack utilisée
+| Composant | Technologie |
+|------------|-------------|
+| Langage | Java 17 |
+| Framework backend | Spring Boot 3.x |
+| ORM | Spring Data JPA (Hibernate) |
+| Base de données | MySQL 8 |
+| Frontend | Thymeleaf, Bootstrap 5 |
+| IDE recommandé | IntelliJ IDEA / VS Code |
+| Build Tool | Maven |
+<img width="828" height="431" alt="image" src="https://github.com/user-attachments/assets/b0728673-3cb5-466c-bf99-cc105c5c19a1" />
+
+---
+## 🧬 Structure du projet
+<img width="900" height="391" alt="image" src="https://github.com/user-attachments/assets/accd56f3-2888-47e5-9417-b28c507ff80f" />
+
+---
+
+## 🚀 Installation et exécution
+### 🔧 Prérequis :
+- Java 17+
+- Maven 3.8+
+- MySQL 8+
+
+### ▶ Étapes :
+# ⚙️ Configuration & Lancement
+# ------------------------------------------------------
+
+requirements:
+  - "Java 17+"
+  - "Maven 3.8+"
+  - "MySQL 8.0"
+
+configuration:
+  database:
+    url: "jdbc:mysql://localhost:3306/evenementiel?serverTimezone=UTC"
+    username: "root"
+    password: ""
+  server:
+    port: 8081
+  jpa:
+    ddl-auto: "update"
+    show-sql: true
+
+run:
+  steps:
+    - "git clone https://github.com/ton-nom-utilisateur/evenementiel.git"
+    - "cd evenementiel"
+    - "mvn clean install"
+    - "mvn spring-boot:run"
+  access_urls:
+    - "http://localhost:8081/evenements"
+    - "http://localhost:8081/participants"
+    - "http://localhost:8081/tickets"
+    - "http://localhost:8081/statistiques"
+
+# ------------------------------------------------------
+# 🗃️ Base de données
+# ------------------------------------------------------
+
+database_model:
+  tables:
+    - Evenement:
+        columns: [id, titre, ville, date, type]
+    - Participant:
+        columns: [id, nom, email]
+    - Ticket:
+        columns: [evenement_id, participant_id, prix, statut, date_achat]
+  relations:
+    - "Evenement 1..* Ticket"
+    - "Participant 1..* Ticket"
+    - "Ticket (clé composite) relie Evenement ↔ Participant"
+
+# ------------------------------------------------------
+# 📊 Statistiques dynamiques
+# ------------------------------------------------------
+
+statistics:
+  description: >
+    Les statistiques sont calculées dynamiquement via StatistiquesWebController,
+    à partir des données MySQL. Elles sont mises à jour en temps réel à chaque ajout,
+    modification ou suppression d’un ticket ou événement.
+  exemples:
+    - "Nombre total de tickets vendus"
+    - "Événements par ville et par type"
+    - "Revenus totaux par date"
+    - "Participants par domaine d’email"
+
+# ------------------------------------------------------
+# 🎥 Vidéos de démonstration
+# ------------------------------------------------------
+
+videos:
+  - title: "🎬 Démonstration complète de l'application"
+    description: "Vidéo présentant la navigation, la gestion des événements, et les statistiques dynamiques."
+    url: "https://drive.google.com/drive/folders/1B1lIsIVFRTy1uK8ZD1UdTXBoc9ivcK4-?usp=sharing"
+
+  - title: "⚙️ Backend API avec Spring Boot"
+    description: "Démonstration des endpoints REST (CRUD, statistiques)."
+    url: "https://drive.google.com/drive/folders/1B1lIsIVFRTy1uK8ZD1UdTXBoc9ivcK4-?usp=sharing"
+
+  - title: "🎨 Interface utilisateur Thymeleaf"
+    description: "Vidéo montrant le rendu des pages HTML et des formulaires Bootstrap."
+    url: "https://drive.google.com/drive/folders/1B1lIsIVFRTy1uK8ZD1UdTXBoc9ivcK4-?usp=sharing"
+
+# ------------------------------------------------------
+# 🧑‍💻 Auteur et Encadrement
+# ------------------------------------------------------
+
+author:
+  name: "Jamila Dabachine"
+  
+  role: "Étudiante en Master Technologies Émergentes en Éducation"
+  
+  institution: "École Normale Supérieure de Marrakech"
+  
+  academic_year: "2025"
+  
+  supervisor: "Professeur Lachgar"
+  
+  email: "j.dabachine3378@uca.ac.ma"
  
+  # 📜 Licence et droits
+# ------------------------------------------------------
+
+license:
+  type: "MIT"
+  notice: >
+    Ce projet est libre d’utilisation et de modification à des fins éducatives.
+    La redistribution est autorisée sous réserve de mentionner l’auteur et l’établissement d’origine.
+  
+  github: "https://github.com/jdabachine3378-svg"
+
+
+
+
