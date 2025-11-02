@@ -46,7 +46,7 @@ Développée en **Spring Boot (backend)** et **Thymeleaf (frontend)**, elle illu
 | Frontend | Thymeleaf, Bootstrap 5 |
 | IDE recommandé | IntelliJ IDEA / VS Code |
 | Build Tool | Maven |
-<img width="828" height="431" alt="image" src="https://github.com/user-attachments/assets/b0728673-3cb5-466c-bf99-cc105c5c19a1" />
+<img width="956" height="495" alt="image" src="https://github.com/user-attachments/assets/32024022-119c-4453-9dc6-5a65fcf0acfb" />
 
 ---
 ## 🧬 Structure du projet
