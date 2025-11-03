@@ -1,4 +1,4 @@
-# 🎟️ Événementiel — Application Web de Gestion d’Événements, Participants et Tickets
+<img width="572" height="425" alt="image" src="https://github.com/user-attachments/assets/5857f244-fdb2-4e76-937e-9785818f76a0" /># 🎟️ Événementiel — Application Web de Gestion d’Événements, Participants et Tickets
 
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-3.2.2-brightgreen)
 ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-HTML5-orange)
@@ -46,7 +46,8 @@ Développée en **Spring Boot (backend)** et **Thymeleaf (frontend)**, elle illu
 | Frontend | Thymeleaf, Bootstrap 5 |
 | IDE recommandé | IntelliJ IDEA / VS Code |
 | Build Tool | Maven |
-<img width="956" height="495" alt="image" src="https://github.com/user-attachments/assets/32024022-119c-4453-9dc6-5a65fcf0acfb" />
+<img width="631" height="406" alt="image" src="https://github.com/user-attachments/assets/40a0fceb-785b-4c14-8811-74f0f7316fe8" />
+
 
 ---
 ## 🧬 Structure du projet
