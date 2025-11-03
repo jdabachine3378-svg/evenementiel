@@ -1,4 +1,4 @@
-<img width="572" height="425" alt="image" src="https://github.com/user-attachments/assets/5857f244-fdb2-4e76-937e-9785818f76a0" /># 🎟️ Événementiel — Application Web de Gestion d’Événements, Participants et Tickets
+# 🎟️ Événementiel — Application Web de Gestion d’Événements, Participants et Tickets
 
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-3.2.2-brightgreen)
 ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-HTML5-orange)
