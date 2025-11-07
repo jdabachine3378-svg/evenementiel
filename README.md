@@ -8,16 +8,15 @@
 
 ---
 
-## 🧭 Aperçu du projet
+# 🧭 Aperçu du projet
 
 **Événementiel** est une application web interactive permettant la **gestion complète des événements, des participants et des tickets**.  
 Développée en **Spring Boot (backend)** et **Thymeleaf (frontend)**, elle illustre une architecture **MVC** moderne avec intégration MySQL et interface responsive via **Bootstrap 5**.
 
 > 🎯 Objectif : Simplifier la gestion d’événements et offrir une interface claire et intuitive.
 
----
 
-## ⚙️ Fonctionnalités principales
+# ⚙️ Fonctionnalités principales
 
 - ✅ **CRUD complet** (Créer, Lire, Mettre à jour, Supprimer)
   - Événements
@@ -32,11 +31,9 @@ Développée en **Spring Boot (backend)** et **Thymeleaf (frontend)**, elle illu
 - 💾 Base de données **MySQL 8.0**
 - 🧩 Architecture **Spring Boot / JPA / Thymeleaf**
 
----
+# 🧱 Architecture technique
 
-## 🧱 Architecture technique
-
-### 🧩 Stack utilisée
+## 🧩 Stack utilisée
 | Composant | Technologie |
 |------------|-------------|
 | Langage | Java 17 |
@@ -48,23 +45,17 @@ Développée en **Spring Boot (backend)** et **Thymeleaf (frontend)**, elle illu
 | Build Tool | Maven |
 <img width="631" height="406" alt="image" src="https://github.com/user-attachments/assets/40a0fceb-785b-4c14-8811-74f0f7316fe8" />
 
-
----
 ## 🧬 Structure du projet
 <img width="900" height="391" alt="image" src="https://github.com/user-attachments/assets/accd56f3-2888-47e5-9417-b28c507ff80f" />
 
----
-
 ## 🚀 Installation et exécution
-### 🔧 Prérequis :
+# 🔧 Prérequis :
 - Java 17+
 - Maven 3.8+
 - MySQL 8+
 
-### ▶ Étapes :
+# ▶ Étapes :
 # ⚙️ Configuration & Lancement
-# ------------------------------------------------------
-
 requirements:
   - "Java 17+"
   - "Maven 3.8+"
@@ -93,26 +84,24 @@ run:
     - "http://localhost:8081/tickets"
     - "http://localhost:8081/statistiques"
 
-# ------------------------------------------------------
-# 🗃️ Base de données
-# ------------------------------------------------------
 
-database_model:
-  tables:
-    - Evenement:
+# 🗃️ Base de données
+ # database_model:
+ # tables:
+    # Evenement:
         columns: [id, titre, ville, date, type]
     - Participant:
         columns: [id, nom, email]
     - Ticket:
         columns: [evenement_id, participant_id, prix, statut, date_achat]
-  relations:
+ # relations:
     - "Evenement 1..* Ticket"
     - "Participant 1..* Ticket"
     - "Ticket (clé composite) relie Evenement ↔ Participant"
 
-# ------------------------------------------------------
+<img width="914" height="582" alt="Capture d&#39;écran 2025-10-28 231406" src="https://github.com/user-attachments/assets/755362d8-210c-4a3d-b77a-73acd127a852" />
+
 # 📊 Statistiques dynamiques
-# ------------------------------------------------------
 
 statistics:
   description: >
@@ -125,38 +114,26 @@ statistics:
     - "Revenus totaux par date"
     - "Participants par domaine d’email"
 
-# ------------------------------------------------------
 # 🎥 Vidéos de démonstration
-# ------------------------------------------------------
 
 videos:
 
+title: "🎬 Démonstration complète de l'application"
 
 https://github.com/user-attachments/assets/24d85391-db5d-4cef-b285-3c35bd00940a
 
-
-
-# ------------------------------------------------------
 # 🧑‍💻 Auteur et Encadrement
-# ------------------------------------------------------
 
-author:
+ # author:
   name: "Jamila Dabachine"
-  
   role: "Étudiante en Master Technologies Émergentes en Éducation"
-  
   institution: "École Normale Supérieure de Marrakech"
-  
   academic_year: "2025"
-  
   supervisor: "Professeur Lachgar"
-  
   email: "j.dabachine3378@uca.ac.ma"
  
   # 📜 Licence et droits
-# ------------------------------------------------------
-
-license:
+ license:
   type: "MIT"
   notice: >
     Ce projet est libre d’utilisation et de modification à des fins éducatives.
