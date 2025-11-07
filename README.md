@@ -130,17 +130,11 @@ statistics:
 # ------------------------------------------------------
 
 videos:
-  - title: "🎬 Démonstration complète de l'application"
-    description: "Vidéo présentant la navigation, la gestion des événements, et les statistiques dynamiques."
-    url: "https://drive.google.com/drive/folders/1B1lIsIVFRTy1uK8ZD1UdTXBoc9ivcK4-?usp=sharing"
 
-  - title: "⚙️ Backend API avec Spring Boot"
-    description: "Démonstration des endpoints REST (CRUD, statistiques)."
-    url: "https://drive.google.com/drive/folders/1B1lIsIVFRTy1uK8ZD1UdTXBoc9ivcK4-?usp=sharing"
 
-  - title: "🎨 Interface utilisateur Thymeleaf"
-    description: "Vidéo montrant le rendu des pages HTML et des formulaires Bootstrap."
-    url: "https://drive.google.com/drive/folders/1B1lIsIVFRTy1uK8ZD1UdTXBoc9ivcK4-?usp=sharing"
+https://github.com/user-attachments/assets/24d85391-db5d-4cef-b285-3c35bd00940a
+
+
 
 # ------------------------------------------------------
 # 🧑‍💻 Auteur et Encadrement
